@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t vinhdoanthe/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run vinhdoanthe/docker-react npm run test -- --converage
